@@ -1,7 +1,8 @@
 #Parqueadero cobro por horas
 
 #Valor primera hora: 5000
-#Valor hora adicional
+#Valor hora adicional: 3000
+
 
 horas = int(input("Ingrese cuántas horas estuvo el carro: "))
 
