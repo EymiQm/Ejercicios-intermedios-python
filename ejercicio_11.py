@@ -7,31 +7,33 @@ act = True
 cadena = ""
 cliente = 0
 
-while(act) :
-    producto = (input("Escoge el producto: cono, vaso, bananasplit:"))
 
-    if producto == "cono" :
-        ccono+=1
-        cliente+=1
+while act:
+    opcion = input("desea registrar un nuevo cliente?\n si,no: ")
+    if opcion == "si":
+        cliente += 1
+        producto = input("Escoge el producto: cono, vaso, bananasplit:")
+        cantidad = int(input(f"Digite la cantidad de {producto} a comprar: "))
+        if producto == "cono":
+            ccono += 1
+            total = 3000 * cantidad
 
-    elif producto == "vaso" :
-        cvaso+=1
-        cliente+=1
+        elif producto == "vaso":
+            cvaso += 1
+            total = 4000 * cantidad
 
-    elif producto == "bananasplit" :
-        cbanana+=1
-        cliente+=1
+        elif producto == "bananasplit":
+            cbanana += 1
+            total = 4000 * cantidad
         
+        cadena = f"el cliente paga ${total} pesos" 
 
-    ag = (input("Desea agregar otro cliente: "))
-    if ag == "1" :
-        total = ccono*3000 + cvaso*4000 + cbanana*4000 
     else:
         act = False
         continue
-       
-    cadena = f"el cliente Nro {cliente} paga {total} pesos" 
+
     print(cadena)
-else: print("ya no mas pedidos")
+else:
+    print(f"En total se registraron {cliente} clientes")
 
 
